@@ -1,0 +1,79 @@
+<div>
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="title">Nome</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            required
+            [(ngModel)]="livro.nome"
+            name="title"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="description">Autor</label>
+          <input
+            class="form-control"
+            id="description"
+            required
+            [(ngModel)]="livro.autor"
+            name="description"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="description">Data Adicionado</label>
+          <input
+            class="form-control"
+            id="description"
+            required
+            [(ngModel)]="livro.dataAdicionado"
+            name="description"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="description">Data de Conclusão</label>
+          <input
+            class="form-control"
+            id="description"
+            required
+            [(ngModel)]="livro.dataConclusao"
+            name="description"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="description">Nota</label>
+          <input
+            class="form-control"
+            id="description"
+            required
+            [(ngModel)]="livro.nota"
+            name="description"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="description">Status</label>
+          <input
+            class="form-control"
+            id="description"
+            required
+            [(ngModel)]="livro.status"
+            name="description"
+          />
+        </div>
+  
+        <button (click)="saveLivro()" class="btn btn-success">Salvar</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <h4>Livro was submitted successfully!</h4>
+        <button class="btn btn-success" (click)="newLivro()">Adicionar</button>
+      </div>
+    </div>
+</div>
