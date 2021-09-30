@@ -1,0 +1,33 @@
+<div class="list row">
+    <div class="col-md-6">
+      <h4>Livros List</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let livro of livros; let i = index"
+          [class.active]="i == indexAtual"
+          (click)="setActiveLivro(livro, i)"
+        >
+          {{ livro.nome }}
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="livroAtual">
+        <h4>Livro</h4>
+        <div>
+          <label><strong>Nome:</strong></label> {{ livroAtual!.nome }}
+        </div>
+        <div>
+          <label><strong>Autor:</strong></label>
+          {{ livroAtual!.autor }}
+        </div>
+        <div>
+          <label><strong>Status:</strong></label>
+          {{ livroAtual!.status }}
+        </div>
+
+        <button (click)="deleteLivro(livroAtual)" class="btn btn-warning">Delete</button>
+      </div>
+    </div>
+</div>
